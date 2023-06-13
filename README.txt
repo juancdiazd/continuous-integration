@@ -2,15 +2,16 @@
 
 Requisitos: Docker
 
-1. Clonar este repositorio en su espacio de trabajo local.
-2. Verificar que Docker esté corriendo en su máquina.
-3. entrar en el navegador a "localhost/phpmyadmin"
+1. Verificar que Docker esté corriendo en su máquina.
+2. Clonar este repositorio en su espacio de trabajo local desde la terminal con "git clone".
+3. Dentro de la carpeta clonada, corremos el siguiente comando: 
 
-Usamos docker-compose como orquestador para correr los contenedores:
+*Usamos docker-compose como orquestador para correr los contenedores.
 
 ```
 docker-compose up -d
 ```
+
 4. Para abrir phpmyadmin vaya a la dirección: http://127.0.0.1:8000 
 5. Para abrir la web principal vaya a la dirección: http://127.0.0.1:80
 
