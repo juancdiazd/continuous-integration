@@ -1,20 +1,23 @@
 -------INSTRUCCIONES PARA CORRER EL PROYECTO------
 
-Es necesario contar con la ultima version de XAMPP instalada, una vez descargado e instalado xampp se procede de la siguiente manera:
+Requisitos: Docker
 
-1. Meter la carpeta "supermercado-mas-barato" dentro del path donde se descargó xampp, en la carpeta llamada "htdocs"
-2. Abrir xampp, iniciar el servidor Apache y MySQL
+1. Clonar este repositorio en su espacio de trabajo local.
+2. Verificar que Docker esté corriendo en su máquina.
 3. entrar en el navegador a "localhost/phpmyadmin"
-4. Crear una nueva base de datos y ponerle de nombre "supermercado" - IMPORTANTE, LA BASE DE DATOS SE DEBE DE LLAMAR EXACTAMENTE supermercado SIN ESPACIOS Y TODO EN MINUSCULAS.
-5. Seleccionar la base de datos creada e importar el archivo "supermercado.sql" que se encuentra en la carpeta db dentro del directorio del proyecto.
-4. Dar click en "Import" que se encuentra en la parte superior.
-6. En phpmyadmin se evidencia cuando ya se cargo el archivo.
-7. Ir en el navegador a la url "localhost/supermercado-mas-barato/" y listo, explorar el proyecto.
+
+Usamos docker-compose como orquestador para correr los contenedores:
+
+```
+docker-compose up -d
+```
+4. Para abrir phpmyadmin vaya a la dirección: http://127.0.0.1:8000 
+5. Para abrir la web principal vaya a la dirección: http://127.0.0.1:80
 
 ----CREDENCIALES DEL USUARIO ADMINISTRADOR PARA ENTRAR AL CRUD----
 
-usuario: admin
-contrasena: admin
+Usuario: admin
+Contraseña: admin
 
 
 Nota: La modificacion de productos tiene un problema con las imagenes, siempre se debe cambiar la imagen a una diferente de la que se tiene creada.
