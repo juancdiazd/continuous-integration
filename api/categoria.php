@@ -1,0 +1,28 @@
+<?php
+$categoria_id = $_GET['categoria_id'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "supermercado";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+mysqli_set_charset($conn, "utf8");
+
+$query = "SELECT categoria_nombre FROM categoria WHERE categoria_id = $categoria_id";
+
+$resultado = mysqli_query($conn, $query);
+
+$row = mysqli_fetch_assoc($resultado);
+
+echo json_encode($row);
+
+header('Content-Type: application/json');
+
+mysqli_close($conn);
+?>
