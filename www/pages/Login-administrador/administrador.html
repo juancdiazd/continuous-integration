@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrador</title>
+    <link rel="stylesheet" href="./administrador.css">
+    <link href="https://fonts.googleapis.com/css2? family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../../images/logos/logo-supermercado.svg" alt="logo">
+                <div>
+                    <h1 class="titulo">SUPERMERCADO</h1>
+                    <h1 class="titulo">EL MAS BARATO</h1>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <div class="menu">
+                    <li><a href="../../index.html">INICIO</a></li>
+                    <li><a href="../Productos/productos.html">PRODUCTOS</a></li>
+                    <li><a href="../Login-administrador/administrador.html">INICIAR SESIÓN</a></li>
+                </div>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main class="contenedor">
+            <section class="form-ingresar">
+                <form method="post" action="./login.php">
+                    <img src="../../images/iconos/administrador.svg" class="imgadm">
+                    <h6>Usuario</h6>
+                    <input class="control" type="text" name="usuario" id="usuario1" placeholder="Ingrese su usuario">
+                    <h6>Contraseña</h6>
+                    <input class="control" type="password" name="contrasena" id="contraseña"
+                        placeholder="Ingrese su contraseña">
+                    <button class="boton" type="submit">Ingresar</button>
+                </form>
+            </section>
+        </main>
+    </div><br><br>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <h3>CONTACTO</h3> <br>
+                <p>Calle 5 2 - 29 Popayan-Cauca</p><br>
+                <p>3158522585</p><br>
+                <i class='bx bxl-facebook-square'>Supermercado-mas-barato</i><br>
+                <i class='bx bx-envelope'>Supermasbarato@gmail.com</i>
+            </div>
+            <div class="boxquienes">
+                <h3>QUIENES SOMOS</h3><br>
+                <a href="#">Nuestros compromisos</p><br></a>
+                <a href="#">Nuestros valores</p></a><br>
+                <a href="#">Mision</p></a><br>
+                <a href="#">Vision</p></a><br>
+            </div>
+            <div class="boxpago">
+                <h3>MEDIOS DE PAGO</h3><br>
+                <img src="../../images/logos/tarjeta.svg" class="medios"><br>
+                <img src="../../images/logos/pse.svg" class="Pse">
+                <img src="../../images/logos/baloto.svg" class="baloto"><br>
+                <img src="../../images/logos/efecty.svg" class="efecty">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
