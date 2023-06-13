@@ -1,4 +1,4 @@
--------INSTRUCCIONES PARA CORRER EL PROYECTO------
+INSTRUCCIONES PARA CORRER EL PROYECTO
 
 Requisitos: 
 - Docker
@@ -22,7 +22,7 @@ docker-compose exec db mysql -u root -p
 * Para abrir phpmyadmin vaya a la dirección: http://127.0.0.1:8000 
 * Para abrir la web principal vaya a la dirección: http://127.0.0.1:80
 
-----CREDENCIALES DEL USUARIO ADMINISTRADOR PARA ENTRAR AL CRUD----
+CREDENCIALES DEL USUARIO ADMINISTRADOR PARA ENTRAR AL CRUD
 
 Usuario: admin
 Contraseña: admin
