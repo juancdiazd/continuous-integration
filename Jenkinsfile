@@ -5,7 +5,7 @@ pipeline {
         stage('docker build') {
             steps {
                 script {
-                    bat "docker.build -f Dockerfile -t  juancdiazd/continuous-integration:latest-${BUILD_ID}"
+                    bat "docker build -f Dockerfile -t  juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
         }
