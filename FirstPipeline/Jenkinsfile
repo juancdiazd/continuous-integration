@@ -12,9 +12,7 @@ pipeline {
         stage('docker push') {
             steps {
                 script {
-                    def REGISTRY_URL = "https://index.docker.io/v1/"
-                    def USER_NAME = "juancdiazd"
-                    docker.withRegistry("$REGISTRY_URL", 'DockerHub-Cred-ID-Defined-In-Jenkins') 
+                    withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ])
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
