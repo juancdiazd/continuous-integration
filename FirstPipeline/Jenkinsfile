@@ -1,26 +1,29 @@
 pipeline {
     agent any
     stages {
-        stage('docker build') {
+        stage('Docker build') {
             steps {
                 script {
                     bat "docker build -f FirstPipeline/Dockerfile -t juancdiazd/continuous-integration:latest-${BUILD_ID} FirstPipeline"
                 }
             }
         }
-        stage('Login') {
+        stage('Docker login') {
 			steps {
                 script {
-                   bat 'docker login -u "juancdiazd" -p "Soft9608!"'
-                }
-            } 
-	    }
+				   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub-credentials',
+                   usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                   bat 'docker login -u "$USERNAME" -p "$PASSWORD"'
+    }
+                } 
+			}
 		}
-        stage('docker push') {
+        stage('Docker push') {
             steps {
                 script {
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
         }
+    }
 }
