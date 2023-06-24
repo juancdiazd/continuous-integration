@@ -12,7 +12,6 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.docker.io', 'docker-hub-credentials')
-                    docker.withRegistry("$REGISTRY_URL", 'docker-hub-credentials')
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
