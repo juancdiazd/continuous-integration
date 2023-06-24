@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('docker-hub-credentials')
+	}
     agent any
     stages {
         stage('docker build') {
@@ -8,11 +11,14 @@ pipeline {
                 }
             }
         }
+        stage('Login') {
+			steps {
+				bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
         stage('docker push') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.docker.io', 'docker-hub-credentials')}
-                    {
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
