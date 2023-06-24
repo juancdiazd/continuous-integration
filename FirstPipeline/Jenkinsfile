@@ -11,7 +11,7 @@ pipeline {
         stage('docker push') {
             steps {
                 script {
-                    withDockerRegistry(registry: 'docker.io/juancdiazd/continuous-integration:latest' [credentialsId: 'docker-hub-credentials']) {
+                    withDockerRegistry('docker.io/juancdiazd/continuous-integration:latest','docker-hub-credentials') {
                     cont.push()
                     cont.push('latest')
                     }
