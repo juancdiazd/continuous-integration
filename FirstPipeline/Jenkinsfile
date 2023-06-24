@@ -8,10 +8,14 @@ pipeline {
                 }
             }
         }
+        stage('Login') {
+			steps {
+				docker.withRegistry('docker.io/juancdiazd/continuous-integration:lastest', 'docker-hub-credentials')
+			}
+		}
         stage('docker push') {
             steps {
                 script {
-                    docker.withRegistry('docker.io/juancdiazd/continuous-integration:lastest', 'docker-hub-credentials')
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
