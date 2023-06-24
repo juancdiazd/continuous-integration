@@ -11,7 +11,7 @@ pipeline {
         stage('docker push') {
             steps {
                 script {
-                    withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "docker.io/continuous-integration:lastest" ])
+                    withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "docker.io/juancdiazd/continuous-integration:lastest" ])
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
