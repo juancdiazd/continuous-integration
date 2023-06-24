@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Login') {
 			steps {
-				   withRegistry('docker.io/juancdiazd/continuous-integration:lastest', 'docker-hub-credentials')
+				   withDockerRegistry('docker.io/juancdiazd/continuous-integration:lastest', 'docker-hub-credentials')
 			}
 		}
         stage('docker push') {
