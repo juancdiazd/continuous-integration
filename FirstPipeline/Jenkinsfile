@@ -11,9 +11,7 @@ pipeline {
         stage('docker push') {
             steps {
                 script {
-                    def REGISTRY_URL = "https://index.docker.io/v1/"
-                    def USER_NAME = "juancdiazd"
-                    docker.withRegistry("$REGISTRY_URL", 'docker-hub-credentials')
+                    withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "docker.io/continuous-integration:lastest" ])
                     bat "docker push juancdiazd/continuous-integration:latest-${BUILD_ID}"
                 }
             }
