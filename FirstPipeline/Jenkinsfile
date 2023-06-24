@@ -13,7 +13,7 @@ pipeline {
                 script {
 				   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub',
                    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-                   bat 'docker login -u "juancdiazdE" -p "Soft9608!"'
+                   bat 'docker login -u "juancdiazd" -p "Soft9608!"'
     }
                 } 
 			}
